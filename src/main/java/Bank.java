@@ -26,6 +26,13 @@ public class Bank {
      * @return boolean
      */
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
+        if (bankAccount.getAccountBalance() - amount < bankAccount.getAccountBalance()
+                && bankAccount.getAccountBalance() - amount >= 0) {
+            return true;
+        }
+            else {
+        }
+        return false;
         /*
          * Implement this function
          */
@@ -42,6 +49,12 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
+        if (bankAccount.getAccountBalance() + amount > bankAccount.getAccountBalance()) {
+            return true;
+        }
+        else {
+        }
+        return false;
         /*
          * Implement this function
          */
@@ -61,9 +74,16 @@ public class Bank {
 
     public boolean transferMoney(final BankAccount source, final BankAccount destination,
             final double amount) {
+        if (destination.getAccountBalance() < destination.getAccountBalance() + amount &&
+                source.getAccountBalance() > source.getAccountBalance() - amount) {
+            return true;
+        }
         /*
          * Implement this function
          */
+    else {
+        }
+        return false;
     }
 
     /**
@@ -74,6 +94,7 @@ public class Bank {
      */
 
     public void changeOwnerName(final BankAccount bankAccount, final String name) {
+       bankAccount.getOwnerName() = name;
         /*
          * Implement this function
          */
